@@ -1,16 +1,14 @@
 <template>
-<div class="panel-collapse collapse"  role="tabpanel">
-  <div class="panel-body">
-    <div class="form-horizontal">
-        <div class="form-group">
-            <label for="title" class="col-sm-2 control-label">提醒名称</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="title" placeholder="" v-model="title" v-validate="title" required>
-            </div>
-        </div>
+  <div class="col-md-6">
+    <div class="form-group">
+      <label class="col-md-3 control-lable" for="name">
+        提醒名称
+      </label>
+      <div class="col-md-9">
+        <input type="text" name="name" id="name" class="form-control" placeholder="请输入提醒名称">
+      </div>
     </div>
   </div>
-</div>
 </template>
 <script>
   export default {
