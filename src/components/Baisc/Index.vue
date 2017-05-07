@@ -32,6 +32,13 @@
           </ul>
         </div>
     </div>
+    <div class="form-group row">
+      <label class="col-md-3 control-label">加法器{{ total }}</label>
+      <div class="col-md-9">
+        <button-counter v-on:incrementParent="incrementTotal"></button-counter>
+        <button-counter v-on:incrementParent="incrementTotal"></button-counter>
+      </div>
+    </div>
   </div>
 </template>
 <style type="text/css">
@@ -43,6 +50,7 @@
   export default {
     data () {
       return {
+        total: 0,
         name: '提醒名称',
         is_checked: '',
         todos: [
@@ -55,12 +63,29 @@
     methods: {
       reverseMessage () {
         this.name = '哈哈哈'
+      },
+      incrementTotal () {
+        this.total += 1
       }
     },
     components: {
       'todo-item': {
         props: ['todo'],
         template: '<li>{{ todo.text }}</li>'
+      },
+      'button-counter': {
+        data: function () {
+          return {
+            counter: 0
+          }
+        },
+        template: '<button v-on:click="increment">{{ counter }}</button>',
+        methods: {
+          increment: function () {
+            this.counter += 1
+            this.$emit('incrementParent')
+          }
+        }
       }
     }
   }
