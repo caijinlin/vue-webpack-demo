@@ -33,11 +33,15 @@
         </div>
     </div>
     <div class="form-group row">
-      <label class="col-md-3 control-label">加法器{{ total }}</label>
+      <label class="col-md-3 control-label" ref="total">加法器{{ total }}</label>
       <div class="col-md-9">
         <button-counter v-on:incrementParent="incrementTotal"></button-counter>
         <button-counter v-on:incrementParent="incrementTotal"></button-counter>
       </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-md-3 control-label">金额计算器{{ price }}</label>
+      <currency-input v-model="price"></currency-input>
     </div>
   </div>
 </template>
@@ -47,12 +51,14 @@
   }
 </style>
 <script>
+  import currencyInput from '../Common/currency_input.vue'
   export default {
     data () {
       return {
         total: 0,
         name: '提醒名称',
         is_checked: '',
+        price: 0,
         todos: [
           { text: '学习 JavaScript' },
           { text: '学习 Vue' },
@@ -86,7 +92,8 @@
             this.$emit('incrementParent')
           }
         }
-      }
+      },
+      currencyInput
     }
   }
 </script>
