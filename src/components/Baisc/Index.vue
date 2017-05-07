@@ -89,6 +89,10 @@
         methods: {
           increment: function () {
             this.counter += 1
+            console.log(this.$el.textContent)   // => '没有更新'
+            this.$nextTick(function () {
+              console.log(this.$el.textContent) // => '更新完成'
+            })
             this.$emit('incrementParent')
           }
         }
