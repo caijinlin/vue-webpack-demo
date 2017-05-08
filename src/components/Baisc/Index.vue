@@ -43,11 +43,26 @@
       <label class="col-md-3 control-label">金额计算器{{ price }}</label>
       <currency-input v-model="price"></currency-input>
     </div>
+    <div class="form-group row">
+      <label class="col-md-3 control-label">展示动画</label>
+      <div class="col-md-9">
+        <button v-on:click="toggleShow">切换</button>
+        <transition name="fade">
+          <p v-if="show">hello</p>
+        </transition>
+      </div>
+    </div>
   </div>
 </template>
 <style type="text/css">
   .block-basic {
     padding: 40px;
+  }
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+  }
+  .fade-enter, .fade-leave-active {
+    opacity: 0
   }
 </style>
 <script>
@@ -55,6 +70,7 @@
   export default {
     data () {
       return {
+        show: false,
         total: 0,
         name: '提醒名称',
         is_checked: '',
@@ -72,6 +88,9 @@
       },
       incrementTotal () {
         this.total += 1
+      },
+      toggleShow () {
+        this.show = !this.show
       }
     },
     components: {
