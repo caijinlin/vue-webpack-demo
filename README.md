@@ -28,6 +28,12 @@ npm run unit
 npm test
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/)
+
+[docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 [vuex分模块](https://vuex.vuejs.org/zh-cn/modules.html)
+
+[vue release](https://github.com/vuejs/vue/releases)
+
+https://github.com/vingojw/vue-vueRouter-webpack/blob/master/Vue%E6%95%99%E7%A8%8B.md
