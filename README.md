@@ -36,4 +36,4 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 [vue release](https://github.com/vuejs/vue/releases)
 
-https://github.com/vingojw/vue-vueRouter-webpack/blob/master/Vue%E6%95%99%E7%A8%8B.md
+[vue最佳实践](https://github.com/vingojw/vue-vueRouter-webpack/blob/master/Vue%E6%95%99%E7%A8%8B.md)
